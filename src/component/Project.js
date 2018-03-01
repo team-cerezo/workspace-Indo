@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-export default ({ projectId }) => (
+export default ({ iteration, projectId }) => (
     <div>
         <h1>Project {projectId}</h1>
         <ul>
@@ -9,6 +9,14 @@ export default ({ projectId }) => (
             <li>TODO イテレーションの一覧を表示する</li>
             <li>TODO イテレーション詳細へリンクする</li>
         </ul>
-        <p><Link to={'/projects/' + projectId + '/iterations/456'}>XXX iteration</Link></p>
+        <ui>
+
+            {iteration.list.filter(iteration => iteration.projectId === Number(projectId)).map(prop => (
+                <li key={prop.iterationId} >
+                    <Link to={'/projects/' + prop.projectId + '/iterations/' + prop.iterationId}>{prop.iterationName}</Link>
+                </li>
+            ))}
+        </ui>
+
     </div>
 );
