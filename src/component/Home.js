@@ -12,13 +12,13 @@ export default ({ project }) => (
             <li>TODO プロジェクト詳細へリンクする</li>
         </ul>
 
-        <ui>
+        <ul>
             {project.list.map(prop => (
                 <li key={prop.projectId} >
                     <Link to={'/projects/' + prop.projectId}>{prop.projectName}</Link>
                 </li>
             ))}
-        </ui>
+        </ul>
     </div>
 );
 
