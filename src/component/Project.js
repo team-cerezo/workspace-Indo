@@ -9,14 +9,14 @@ export default ({ iteration, projectId }) => (
             <li>TODO イテレーションの一覧を表示する</li>
             <li>TODO イテレーション詳細へリンクする</li>
         </ul>
-        <ui>
+        <ul>
 
             {iteration.list.filter(iteration => iteration.projectId === Number(projectId)).map(prop => (
                 <li key={prop.iterationId} >
                     <Link to={'/projects/' + prop.projectId + '/iterations/' + prop.iterationId}>{prop.iterationName}</Link>
                 </li>
             ))}
-        </ui>
+        </ul>
 
     </div>
 );
