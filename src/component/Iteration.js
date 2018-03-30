@@ -141,7 +141,7 @@ export default ({ task, story, projectId, iterationId }) => (
             <li>TODO タスクをレーン移動できるようにする（まだアサインはできなくて良い）</li>
         </ul>
 
-        <ui>
+        <ul>
             {story.list.filter(story => (story.projectId === Number(projectId) && story.iterationId === Number(iterationId))).map(prop => (
                 <li key={story.storyId} >
                     storyId:{prop.storyId}#storyName:{prop.storyName}
@@ -183,6 +183,6 @@ export default ({ task, story, projectId, iterationId }) => (
                     </table>
                 </li>
             ))}
-        </ui>
+        </ul>
     </div>
 );
